@@ -1,4 +1,6 @@
 language: c
 dist: trusty
+before_install: cd
+install: make
 compiler: gcc
-script:  ./build.sh
+script:  make
