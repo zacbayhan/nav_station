@@ -2,4 +2,4 @@ language: c
 install: make
 dist: trusty
 compiler: gcc
-script: make -C ./src
+script:  cd nav_station && echo $PWD && make -C ./src
