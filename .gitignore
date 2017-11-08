@@ -1,0 +1,6 @@
+nav_station
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
