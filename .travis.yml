@@ -1,0 +1,5 @@
+language: c
+install: make
+dist: trusty
+compiler: gcc
+script: make
