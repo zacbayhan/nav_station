@@ -2,4 +2,5 @@ language: c
 install: make
 dist: trusty
 compiler: gcc
-script:  cd src && make
+before_script: cd src
+script:  make
