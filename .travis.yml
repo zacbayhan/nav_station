@@ -1,5 +1,4 @@
 language: c
-install: make
 dist: trusty
 compiler: gcc
 script:  ./build.sh
