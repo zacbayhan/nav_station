@@ -1,6 +1,6 @@
 language: c
 dist: trusty
-before_install: - if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "on development" fi && cd src && echo $PWD
+before_install: - if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "on development" fi
 install: make
 compiler: gcc
 script:  make clean
