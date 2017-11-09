@@ -10,7 +10,7 @@ script:  make clean && echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
 
 development:
   after_success:
-    - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+    - "curl -o /tmp/travis-automerge https://github.com/zacbayhan/nav_station.git"
     - "chmod a+x /tmp/travis-automerge"
     - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=zacbayhan/nav_station /tmp/travis-automerge"
 
