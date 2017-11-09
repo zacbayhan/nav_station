@@ -6,7 +6,7 @@ before_install: cd src && echo $PWD
 compiler:
   - gcc
   - clang
-script:  make clean
+script:  make clean && echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
 
 development:
   after_success:
