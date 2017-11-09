@@ -2,8 +2,8 @@ language: c
 dist: trusty
 sudo: required
 before_install:
-  - apt-get update
-  - apt-get -y upgrade
+  - sudo apt-get update
+  - sudo apt-get -y upgrade
 install: make
 compiler: gcc
 script:  make clean
