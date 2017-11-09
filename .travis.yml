@@ -1,19 +1,16 @@
+language: c
+dist: trusty
+before_install: cd src && echo $PWD
+install: make
+compiler: gcc
+script:  make clean
+
 development:
-  language: c
-  dist: trusty
-  before_install: cd src && echo $PWD
-  install: make
-  compiler: gcc
-  script:  make clean
   after_success:
     - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
     - "chmod a+x /tmp/travis-automerge"
     - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=zacbayhan/nav_station /tmp/travis-automerge"
 
 master:
-  language: c
-  dist: trusty
-  before_install: cd src && echo $PWD
-  install: make
-  compiler: gcc
-  script:  make clean
+  after_success:
+    script: "build has been sucessfully merged"
