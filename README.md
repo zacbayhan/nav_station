@@ -13,7 +13,8 @@ Working on integrating World Wind, on a c rest api. By using the c backend it is
   `$  ./start_script.sh`
 
 * clean up
-`$ make clean -C src`
+
+  `$ make clean -C src`
 
 # Todo's
   * separate server and web files
