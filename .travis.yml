@@ -2,7 +2,10 @@ language: c
 dist: trusty
 sudo: required
 install: make
-compiler: gcc
+before_install: cd src && echo $PWD
+compiler:
+  - gcc
+  -clang
 script:  make clean
 
 development:
