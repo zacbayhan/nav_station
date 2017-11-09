@@ -1,6 +1,3 @@
-travis encrypt USERNAME=<username> --add env.global
-travis encrypt PASSWORD=$(cat <password_file.txt>) --add env.global
-
 language: c
 dist: trusty
 sudo: required
