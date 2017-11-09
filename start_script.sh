@@ -1,8 +1,14 @@
 echo 'Starting nav startion'
 
-make -C src
 
-echo 'changing directory'
-cd src
+make -v | grep 'GNU Make' &> /dev/null
 
-./web_server
+if [ $? == 0 ]; then
+	echo "make is installed"
+  make -C src
+  echo 'changing directory'
+  cd src
+  ./web_server | grep 'Starting web server'
+else
+	echo $MAKE
+fi
