@@ -8,13 +8,16 @@ Working on integrating World Wind, on a c rest api. By using the c backend it is
 
 * clone directory
 
-* execute the following command
+* execute the following command which should build and start the server
 
   `$  ./start_script.sh`
+
+* clean up
+`$ make clean -C src`
 
 # Todo's
   * separate server and web files
   * write build tests
   * write deployment script
   * look into sdr, klm, and mqtt
-  * build api 
+  * build api
