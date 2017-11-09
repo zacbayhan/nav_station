@@ -1,11 +1,12 @@
+travis encrypt USERNAME=<username> --add env.global
+travis encrypt PASSWORD=$(cat <password_file.txt>) --add env.global
+
 language: c
 dist: trusty
 sudo: required
 install: make
 before_install: cd src && echo $PWD
-compiler:
-  - gcc
-  - clang
+compiler: gcc
 script:  make clean && echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
 
 development:
