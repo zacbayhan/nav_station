@@ -1,3 +1,3 @@
-PROG = nav_station
-MODULE_CFLAGS=-DMG_ENABLE_THREADS -DMG_ENABLE_HTTP_WEBSOCKET=0
-include examples.mk
+PROG = web_server
+MODULE_CFLAGS=-DMG_DISABLE_DAV_AUTH -DMG_ENABLE_FAKE_DAVLOCK
+include deps/examples.mk
