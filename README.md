@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/zacbayhan/nav_station.svg?branch=master)](https://travis-ci.org/zacbayhan/nav_station)
 
 
 # Nav Station
@@ -8,13 +9,16 @@ Working on integrating World Wind, on a c rest api. By using the c backend it is
 
 * clone directory
 
-* execute the following command which should build and start the server
+* execute the following command which should build and start the server 
 
   `$  ./start_script.sh`
 
 * clean up
 
   `$ make clean -C src`
+
+
+
 
 # Todo's
   * separate server and web files
