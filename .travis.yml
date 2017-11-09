@@ -1,8 +1,9 @@
 language: c
 dist: trusty
+sudo: required
 before_install:
-  script:
-    - if [ "$TRAVIS_BRANCH" == "develop" ]; then echo "on development" fi
+  - apt-get update
+  - apt-get -y upgrade
 install: make
 compiler: gcc
 script:  make clean
