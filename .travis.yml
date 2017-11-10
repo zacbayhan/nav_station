@@ -33,3 +33,4 @@ jobs:
       script:
         - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
         - echo should only be performend on master branch
+        - echo why you no build?
