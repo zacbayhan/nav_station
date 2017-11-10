@@ -1,11 +1,11 @@
-stages:
-  - name: testing
-      if: branch = development
+language: c
+dist: trusty
+sudo: required
+install: make
+before_install: cd src && echo $PWD
+compiler: gcc
+script:  make clean
+jobs:
+  include:
+    - stage: testing
       script: echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
-      language: c
-      dist: trusty
-      sudo: required
-      install: make
-      before_install: cd src && echo $PWD
-      compiler: gcc
-      script:  make clean
