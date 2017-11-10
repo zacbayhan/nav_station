@@ -12,25 +12,22 @@ stages:
 
 jobs:
   include:
-    - stage: make
-      script:
-        - echo entering make stage \(compile, identify branch, clean\)
-        - make -C src
-        - ls src/
-        - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
-        - make clean -C src
-        - ls src/
+    - stage:
+      - name: make
+          script:
+            - echo entering make stage \(compile, identify branch, clean\)
+            - make -C src
+            - ls src/
+            - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+            - make clean -C src
+            - ls src/
 
-jobs:
-  include:
-    - stage: testing
-      script:
-        - echo running test scripts
+      - name: testing
+          script:
+            - echo running test scripts
 
-jobs:
-  include:
-    - stage: deploy
-      script:
-        - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
-        - echo should only be performend on master branch
-        - echo why you no build?
+      -name: deploy
+          script:
+            - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+            - echo should only be performend on master branch
+            - echo why you no build?
