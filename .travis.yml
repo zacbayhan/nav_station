@@ -13,5 +13,7 @@ jobs:
       script:
         - echo entering make stage \(compile, identify branch, clean\)
         - make
+        - ls nav_station/*
         - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
         - make clean
+        - ls nav_station/*
