@@ -1,3 +1,3 @@
-PROG = web_server
+PROG = src/web_server
 MODULE_CFLAGS=-DMG_DISABLE_DAV_AUTH -DMG_ENABLE_FAKE_DAVLOCK
-include deps/examples.mk
+include src/deps/examples.mk
