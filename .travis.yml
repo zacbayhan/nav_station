@@ -8,9 +8,8 @@ script:  make clean && echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
 
 development:
   after_success:
-    - "curl -o /tmp/travis-automerge https://github.com/zacbayhan/nav_station.git"
-    - "chmod a+x /tmp/travis-automerge"
-    - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=nav_station /tmp/travis-automerge"
+    - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+    - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 
 master:
   after_success:
