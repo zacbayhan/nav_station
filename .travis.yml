@@ -6,6 +6,9 @@ compiler: gcc
 
 stages:
   - make
+  - testing
+  - name: deploy
+    if: branch = master
 
 jobs:
   include:
@@ -17,3 +20,16 @@ jobs:
         - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
         - make clean -C src
         - ls src/
+
+jobs:
+  include:
+    - stage: testing
+      script:
+        - echo running test scripts
+
+jobs:
+  include:
+    - stage: deploy
+      script:
+        - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+        - echo should only be performend on master branch
