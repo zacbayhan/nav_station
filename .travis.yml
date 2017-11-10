@@ -1,20 +1,11 @@
-language: c
-dist: trusty
-sudo: required
-install: make
-before_install: cd src && echo $PWD
-compiler: gcc
-script:  make clean
-
-branches:
-  only:
-    - master
-    - development
-
-if: branch = master
-  script:
-    - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
-
-if: branch = development
-  script:
-    - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+stages:
+  - name: testing
+      if: branch = development
+      script: echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
+      language: c
+      dist: trusty
+      sudo: required
+      install: make
+      before_install: cd src && echo $PWD
+      compiler: gcc
+      script:  make clean
