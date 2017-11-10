@@ -1,7 +1,7 @@
 language: c
 dist: trusty
 sudo: required
-before_install: apt-get update && apt-get -y upgrade
+before_install: echo starting nav_station\'s automated build and deployment pipeline
 compiler: gcc
 
 stages:
