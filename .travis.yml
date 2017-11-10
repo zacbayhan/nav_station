@@ -1,7 +1,7 @@
 language: c
 dist: trusty
 sudo: required
-before_install: cd src && echo $PWD
+before_install: apt-get update && apt-get -y upgrade
 compiler: gcc
 
 stages:
@@ -12,8 +12,8 @@ jobs:
     - stage: make
       script:
         - echo entering make stage \(compile, identify branch, clean\)
-        - make
-        - ls nav_station/*
+        - make -C src
+        - ls src/
         - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
-        - make clean
-        - ls nav_station/*
+        - make clean -C src
+        - ls src/
