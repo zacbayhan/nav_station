@@ -11,7 +11,7 @@ jobs:
   include:
     - stage: make
       script:
-        - echo entering make stage (compile, identify branch, clean)
+        - echo entering make stage \(compile, identify branch, clean\)
         - make
         - echo ${TRAVIS_PULL_REQUEST_BRANCH:-$TRAVIS_BRANCH}
         - make clean
