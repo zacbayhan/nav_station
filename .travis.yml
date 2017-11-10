@@ -6,6 +6,9 @@ compiler: gcc
 
 stages:
   - make
+  - testing
+  - name: deploy
+    if: branch = master
 
 jobs:
   include:
