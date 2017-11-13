@@ -4,3 +4,4 @@ nav_station
 *.ko
 *.obj
 *.elf
+.secrets
